@@ -9,7 +9,7 @@
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
             rel="stylesheet"
         />
-        <title>Email Sent</title>
+        <title>Login User</title>
         <style>
             :root {
                 /*definimos los colores principales como variables globales*/
@@ -40,16 +40,14 @@
                 grid-template-rows: auto 1fr auto;
                 width: 300px;
                 padding: 10px;
-                justify-items: center;
                 border: 1px solid var(--hospital-green);
                 border-radius: var(--md);
                 box-shadow: 10px 10px 5px var(--shadow-light-grey);
-
             }
             .logo {
                 width: 150px;
-                margin-top: 10px;
-                margin-bottom: 10px;
+                margin-top: 20px;
+                margin-bottom: 30px;
                 justify-self: center;
                 display: none;
             }
@@ -60,39 +58,40 @@
                 margin-bottom: 12px;
                 text-align: center;
             }
-            .subtitle {
-                color: var(--very-light-pink);
-                font-size: var(--md);
-                font-weight: 300;
-                margin-top: 0;
-                margin-bottom: 32px;
-                text-align: center;
-            }
-            .email-image {
-                width: 132px;
-                height: 132px;
-                border-radius: 50%;
-                background-color: var(--text-input-field);
+            .form {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 24px;
+                flex-direction: column;
             }
-            .email-image img {
-                width: 80px;
-            }
-            .resend {
-                font-size: var(--sm);
-            }
-            .resend span {
-                color: var(--very-light-pink);
-            }
-            .resend a {
+            .form a {
                 color: var(--hospital-green);
+                font-size: var(--sm);
+                text-align: center;
                 text-decoration: none;
+                margin-bottom: 52px;
             }
-            .resend a:hover {
-                color: var(--hover-hospital-green);
+            .label {
+                font-size: var(--sm);
+                font-weight: bold;
+                margin-bottom: 4px;
+            }
+            .input {
+                background-color: var(--text-input-field);
+                border: 1px solid var(--hospital-green);
+                border-radius: 8px;
+                height: 30px;
+                font-size: var(--md);
+                padding: 6px;
+                margin-bottom: 12px;
+            }
+            input:active,
+            input:focus {
+                font-size: 13px;
+                border: 1px solid var(--hover-hospital-green);
+                outline: none;
+                background-color: #ffffff;
+            }
+            .input-email {
+                margin-bottom: 22px;
             }
             .primary-button {
                 background-color: var(--hospital-green);
@@ -108,6 +107,21 @@
             .primary-button:hover {
                 background-color: var(--hover-hospital-green);
             }
+            .secondary-button {
+                background-color: var(--white);
+                border-radius: 8px;
+                border: 1px solid var(--hospital-green);
+                color: var(--hospital-green);
+                width: 100%;
+                cursor: pointer;
+                font-size: var(--md);
+                font-weight: bold;
+                height: 50px;
+            }
+            .secondary-button:hover {
+                background-color: var(--hospital-green);
+                color: var(--white);
+            }
             .login-button {
                 margin-top: 14px;
                 margin-bottom: 30px;
@@ -117,10 +131,10 @@
                 .logo {
                     display: block;
                 }
-                .title {
-                    color: var(--dark);
-                    font-weight: 500;
+                .form-container{
+                    height: 90%;
                 }
+                
             }
         </style>
     </head>
@@ -129,23 +143,29 @@
             <div class="form-container">
                 <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo" />
 
-                <h1 class="title">Email has been sent!</h1>
-
-                <p class="subtitle">
-                    Please check your inbox for instructions on how to reset the
-                    password
-                </p>
-
-                <div class="email-image">
-                    <img src="./icons/email.svg" alt="email" />
-                </div>
-
-                <button class="primary-button login-button">Login</button>
-
-                <p class="resend">
-                    <span>Didn't receive the email?</span>
-                    <a href="/">Resend</a>
-                </p>
+                <form action="/" class="form">
+                    <label for="email" class="label">Email Address</label>
+                    <input
+                        type="text"
+                        id="email"
+                        placeholder="email@example.com"
+                        class="input input-email"
+                    />
+                    <label for="password" class="label">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="*********"
+                        class="input input-password"
+                    />
+                    <input
+                        type="submit"
+                        value="Log in"
+                        class="primary-button login-button"
+                    />
+                    <a href="/">Forgot my password</a>
+                </form>
+                <button class="secondary-button signup-button">Sign up</button>
             </div>
         </div>
     </body>
