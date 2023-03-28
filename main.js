@@ -52,16 +52,19 @@ productList.push(
         name: "bike",
         price: 225,
         image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        detail: "este producto es asombroso",
     },
     {
         name: "consola",
         price: 235,
         image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        detail: "este producto es asombroso 1",
     },
     {
         name: "pantalla",
         price: 245,
         image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        detail: "este producto es asombroso 2",
     }
 );
 
@@ -92,7 +95,7 @@ function renderProducts(arr){
         productCardImg.setAttribute("src", product.image);
         //div dentro del div principal
         const productInfo = document.createElement("div");
-        productInfo.classList.add("product-info");
+        productInfo.classList.add("product-card-info");
         //div dentro del div product info
         const productInfoDiv = document.createElement("div");
         //p dentro del div de product info
