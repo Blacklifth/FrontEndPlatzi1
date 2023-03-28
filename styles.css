@@ -175,15 +175,14 @@ nav {
     font-size: var(--sm);
     color: var(--hospital-green);
 }
-/*Product details y shopping cart*/
+/*Product details aside  y shopping cart*/
 .product-detail-padding{
     padding: 0 24px;
 }
 .product-detail {
-    top: 62px;
+    top: 61px;
     background-color: var(--white);
     width: 360px;
-    
     box-sizing: border-box;
     position: absolute;
     right: 0;
