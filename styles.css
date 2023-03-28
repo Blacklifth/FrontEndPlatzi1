@@ -141,11 +141,12 @@ nav {
 /*Menu Mobile*/
 .mobile-menu {
     background-color: var(--white);
-    padding: 24px;
+    padding-left: 24px;
     background: var(--white);
     position: absolute;
     top: 61px;
     left: 0px;
+    width: calc(100% - 24px);
 }
 .mobile-menu a {
     text-decoration: none;
@@ -176,18 +177,19 @@ nav {
     color: var(--hospital-green);
 }
 /*Product details aside  y shopping cart*/
-.product-detail-padding{
-    padding: 0 24px;
-}
-.product-detail {
-    top: 61px;
+
+aside {
     background-color: var(--white);
     width: 360px;
     box-sizing: border-box;
     position: absolute;
+    top: 61px;
     right: 0;
 }
-
+/*shopping cart*/
+#shopping-cart-container{
+    padding: 0 24px;
+}
 .title-container {
     display: flex;
 }
@@ -228,7 +230,6 @@ nav {
     font-weight: bold;
 }
 
-/*shopping cart*/
 .shopping-cart {
     display: grid;
     grid-template-columns: auto 1fr auto auto;
@@ -268,50 +269,6 @@ nav {
     font-weight: bold;
     height: 50px;
 }
-
-/*Product cards */
-.cards-container {
-    margin: 24px 0 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
-    gap: 26px;
-    place-content: center;
-}
-.product-card {
-    width: 240px;
-}
-.product-card img {
-    width: 240px;
-    height: 240px;
-    border-radius: 20px;
-    object-fit: cover;
-}
-.product-card-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 12px;
-}
-.product-card-info div p:nth-child(1) {
-    font-weight: bold;
-    font-size: var(--md);
-    margin-top: 0;
-    margin-bottom: 4px;
-}
-.product-card-info div p:nth-child(2) {
-    font-size: var(--sm);
-    margin-top: 0;
-    margin-bottom: 0;
-    color: var(--very-light-pink);
-}
-.product-card-info figure {
-    margin: 0;
-}
-.product-card-info figure img {
-    width: 35px;
-    height: 35px;
-}
-
 /*product aside toggle details*/
 .product-detail-close {
     background: var(--white);
@@ -323,32 +280,33 @@ nav {
     z-index: 2;
     padding: 12px;
     border-radius: 50%;
-}
-.product-detail-close:hover {
     cursor: pointer;
 }
-.product-detail > img:nth-child(2) {
+#product-detail-close:hover {
+    cursor: pointer;
+}
+#product-detail > img:nth-child(2) {
     width: 100%;
     height: 360px;
     object-fit: cover;
     border-radius: 0 0 20px 20px;
 }
-.product-info {
+#product-detail .product-info {
     margin: 24px 24px 0 24px;
 }
-.product-info p:nth-child(1) {
+#product-detail .product-info p:nth-child(1) {
     font-weight: bold;
     font-size: var(--md);
     margin-top: 0;
     margin-bottom: 4px;
 }
-.product-info p:nth-child(2) {
+#product-detail .product-info p:nth-child(2) {
     color: var(--very-light-pink);
     font-size: var(--md);
     margin-top: 0;
     margin-bottom: 36px;
 }
-.product-info p:nth-child(3) {
+#product-detail .product-info p:nth-child(3) {
     color: var(--very-light-pink);
     font-size: var(--sm);
     margin-top: 0;
@@ -370,6 +328,52 @@ nav {
     align-items: center;
     justify-content: center;
 }
+
+/*Product card */
+.cards-container {
+    margin: 24px 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: 26px;
+    place-content: center;
+}
+.product-card {
+    width: 240px;
+}
+.product-card img {
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.product-card .product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+.product-card .product-info div p:nth-child(1) {
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+.product-card .product-info div p:nth-child(2) {
+    font-size: var(--sm);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--very-light-pink);
+}
+.product-card .product-info figure {
+    margin: 0;
+}
+.product-card .product-info figure img {
+    width: 35px;
+    height: 35px;
+}
+
+
 @media (max-width: 640px) {
     .menu {
         display: block;
@@ -385,7 +389,7 @@ nav {
     .desktop-menu {
         display: none;
     }
-    .product-detail {
+    aside {
         width: 100%;
     }
     /*product cards*/
